@@ -2,7 +2,8 @@
 
 
 1. Write YAML file.
-1. Run `yknt` command, with YAML file.
+1. Run this with YAML file.  
+`yknk -in ./cheks1.yml`
 
 #### yknk...
 yknk is from 'Yakiniku'.

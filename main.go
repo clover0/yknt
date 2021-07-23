@@ -1,13 +1,17 @@
 package main
 
 import (
+	"flag"
 	"yknk/execution"
 	"yknk/mapper"
 )
 
-func main(){
+func main() {
+	yamlpath := flag.String("in", "./examples/example.yaml", "Execution YAML file.")
 
-	m := mapper.ReadYaml("./examples/example.yaml")
+	flag.Parse()
+
+	m := mapper.ReadYaml(*yamlpath)
 	tasks := mapper.MkTasks(m.M.TaskMaps)
 
 	e := execution.NewExecutor()
