@@ -8,7 +8,21 @@
 #### yknk...
 yknk is from 'Yakiniku'.
 
-# Example
+# Quick start
+## Install
+```shell
+wget  -qO- https://github.com/clover0/yknk/releases/download/v0.0.0/yknk_0.0.0_darwin_amd64.tar.gz | tar xvz - 
+```
+
+## Run
+```shell
+./yknk
+```
+
+options:
+- `-in` YAML file path
+
+## Example
 For network simple checker.
 
 ### YAML
