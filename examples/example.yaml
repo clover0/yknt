@@ -1,29 +1,23 @@
 version: 1
-
 flow:
-  name: "tasks!"
+  name: "example.com"
   concurrent: true
   tasks:
-    - name: "parent1"
+    - name: "Application and check IP"
       concurrent: true
-      command: "echo"
-      args: [ "start!", "parent1" ]
       tasks:
-        - name: "curl success 1"
+        - name: "Get example.com"
           command: curl
           args: [ "--head", "-sS","https://example.com" ]
-        - name: "curl fail"
-          command: curl
-          args: [ "--head", "-sS", "httpx://example.com/2" ]
-        - name: "ping 1"
+        - name: "Reach packet"
           command: ping
           args: [ "-c","3","example.com" ]
-    - name: "parent2"
+    - name: "Port"
       concurrent: false
       tasks:
-        - name: "netcat success"
+        - name: "Connect 80"
           command: nc
           args: [ "example.com","80"]
-        - name: "netcat fail"
+        - name: "Connect 8080"
           command: nc
           args: [ "example.com","8080"]

@@ -4,6 +4,9 @@
 1. Write YAML file.
 1. Run `yknt` command, with YAML file.
 
+#### yknk...
+yknk is from 'Yakiniku'.
+
 # Example
 For network simple checker.
 
