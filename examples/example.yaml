@@ -1,0 +1,29 @@
+version: 1
+
+flow:
+  name: "tasks!"
+  concurrent: true
+  tasks:
+    - name: "parent1"
+      concurrent: true
+      command: "echo"
+      args: [ "start!", "parent1" ]
+      tasks:
+        - name: "curl success 1"
+          command: curl
+          args: [ "--head", "-sS","https://example.com" ]
+        - name: "curl fail"
+          command: curl
+          args: [ "--head", "-sS", "httpx://example.com/2" ]
+        - name: "ping 1"
+          command: ping
+          args: [ "-c","3","example.com" ]
+    - name: "parent2"
+      concurrent: false
+      tasks:
+        - name: "netcat success"
+          command: nc
+          args: [ "example.com","80"]
+        - name: "netcat fail"
+          command: nc
+          args: [ "example.com","8080"]
