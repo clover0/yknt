@@ -6,7 +6,7 @@
 `yknk -in ./cheks1.yml`
 
 #### yknk...
-yknk is from 'Yakiniku'.
+yknk is from 'Yakiniku'. I like Yakiniku!
 
 # Quick start
 ## Install
